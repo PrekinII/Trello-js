@@ -22,6 +22,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: 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
+
   tag: $(APPVEYOR_BUILD_VERSION)
   on:
     branch: main

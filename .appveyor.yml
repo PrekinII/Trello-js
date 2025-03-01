@@ -1,0 +1,17 @@
+version: 1.0.{build}
+image: Visual Studio 2019
+environment:
+    nodejs_version: "14"
+install:
+    - ps: Install-Product node $env:nodejs_version
+    - yarn install
+build_script:
+    - yarn build
+artifacts:
+    - path: dist
+      name: dist
+deploy:
+    provider: GitHub
+    artifact: dist
+    on:
+        branch: main

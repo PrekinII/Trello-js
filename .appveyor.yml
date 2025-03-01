@@ -2,8 +2,6 @@ version: 1.0.{build}
 image: Visual Studio 2019
 environment:
     nodejs_version: "22"
-    GITHUB_TOKEN:
-        secure: dfRaGCqPXIRBEzb3e/MgS1H9iKXi8nHCP/zgia2JCVt/mOa5lUjwjDQdXVvlanoe
 install:
     - ps: Install-Product node $env:nodejs_version
     - yarn install

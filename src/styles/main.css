@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#app {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.column {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    width: 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    cursor: grab;
+}
+
+
+.card.dragging {
+    opacity: 0.4;
+}
+
+
+.add-card {
+    background-color: grey;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* При наведении на кнопку */
+.add-card:hover {
+    background-color: #005f8c;
+}
+
+
+.delete-card {
+    display: none;
+    float: right;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+}
+
+.card:hover .delete-card {
+    display: inline;
+}
+
+.cards {
+    min-height: 50px; /* Минимальная высота, чтобы можно было бросать карточки */
+    padding: 10px;
+    border: 2px dashed transparent; /* Граница при наведении */
+    transition: border 0.2s ease-in-out;
+}
+
+.cards.dragover {
+    border: 2px dashed grey; /* Граница появляется при наведении карточки */
+}

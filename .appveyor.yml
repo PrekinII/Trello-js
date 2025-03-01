@@ -3,7 +3,7 @@ image: Visual Studio 2019
 environment:
     nodejs_version: "22"
     GITHUB_TOKEN:
-        secure: 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
+        secure: dfRaGCqPXIRBEzb3e/MgS1H9iKXi8nHCP/zgia2JCVt/mOa5lUjwjDQdXVvlanoe
 install:
     - ps: Install-Product node $env:nodejs_version
     - yarn install
@@ -20,7 +20,7 @@ on_success:
 deploy:
   provider: GitHub
   auth_token:
-    secure: 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
+    secure: dfRaGCqPXIRBEzb3e/MgS1H9iKXi8nHCP/zgia2JCVt/mOa5lUjwjDQdXVvlanoe
   tag: $(APPVEYOR_BUILD_VERSION)
   on:
     branch: main

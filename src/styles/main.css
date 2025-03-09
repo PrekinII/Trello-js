@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -41,10 +41,10 @@ body {
     padding: 8px 12px;
     border-radius: 3px;
     cursor: pointer;
-}
+} */
 
 /* При наведении на кнопку */
-.add-card:hover {
+/* .add-card:hover {
     background-color: #005f8c;
 }
 
@@ -59,15 +59,126 @@ body {
 
 .card:hover .delete-card {
     display: inline;
-}
+} */
 
-.cards {
-    min-height: 50px; /* Минимальная высота, чтобы можно было бросать карточки */
+/* .cards {
+    min-height: 50px;
     padding: 10px;
-    border: 2px dashed transparent; /* Граница при наведении */
+    border: 2px dashed transparent;
     transition: border 0.2s ease-in-out;
 }
 
 .cards.dragover {
-    border: 2px dashed grey; /* Граница появляется при наведении карточки */
+    border: 2px dashed grey;
+} */
+
+
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f5f7;
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.column {
+    background-color: #ebecf0;
+    border-radius: 3px;
+    padding: 10px;
+    flex: 1; /* Колонки растягиваются по ширине */
+    min-width: 250px; /* Минимальная ширина колонки */
+    max-width: 100%; /* Максимальная ширина колонки */
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+}
+
+.column h2 {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+}
+
+.cards {
+    min-height: 100px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+    cursor: grab;
+}
+
+.card.dragging {
+    opacity: 0.5;
+}
+
+.card .delete-card {
+    float: right;
+    cursor: pointer;
+    color: #6b778c;
+}
+
+.card .delete-card:hover {
+    color: #172b4d;
+}
+
+.add-card {
+    background-color: transparent;
+    border: none;
+    color: #6b778c;
+    cursor: pointer;
+    padding: 8px;
+    width: 100%;
+    text-align: left;
+}
+
+.add-card:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+    color: #172b4d;
+}
+
+.form-field {
+    margin-top: 10px;
+    width: 100%; /* Форма занимает всю ширину колонки */
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+}
+
+.form-field textarea {
+    width: calc(100% - 16px); /* Учитываем padding */
+    padding: 8px;
+    border: 1px solid #dfe1e6;
+    border-radius: 3px;
+    resize: vertical;
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+}
+
+.form-btn-box {
+    margin-top: 8px;
+}
+
+.form-btn-box button {
+    background-color: #4457ac;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.form-btn-box button[type="button"] {
+    background-color: #97989a;
+    margin-left: 8px;
+}
+
+.form-btn-box button:hover {
+    opacity: 0.9;
 }

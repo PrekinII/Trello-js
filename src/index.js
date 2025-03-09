@@ -1,7 +1,4 @@
 import './styles/main.css';
 import Trello from './Trello';
 
-document.addEventListener('DOMContentLoaded', () => {
-    const trello = new Trello();
-    trello.init();
-});
+const trello = new Trello(); // eslint-disable-line no-unused-vars

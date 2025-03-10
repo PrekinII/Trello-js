@@ -68,6 +68,10 @@ deploy:
   branch: gh-pages
   on:
     branch: main
+  skip_commits:  # Добавляем эту секцию
+    files:
+      - '**'
+    message: /\[skip ci\]/
 
 image: Ubuntu2204
 

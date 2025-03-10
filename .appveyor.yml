@@ -18,40 +18,73 @@
 #   - git config --global user.email "appveyor@example.com"
 #   - git remote set-url origin https://%GITHUB_TOKEN%@github.com/PrekinII/Trello-js.git
 #   - yarn deploy
-deploy:
-  provider: GitHub
-  auth_token:
-    secure: v+rixxnOEEOr3Q1jzX1djkwvuqepqTaRiZlRIOqEdooA6YviSvXGEwq34iaoSa2j
+# deploy:
+#   provider: GitHub
+#   auth_token:
+#     secure: v+rixxnOEEOr3Q1jzX1djkwvuqepqTaRiZlRIOqEdooA6YviSvXGEwq34iaoSa2j
 
 #   tag: $(APPVEYOR_BUILD_VERSION)
 #   on:
 #     branch: main
 
-image: Ubuntu2204  # образ для сборки
 
-stack: node 22  # окружение
+
+# image: Ubuntu2204  # образ для сборки
+
+# stack: node 22  # окружение
+
+# branches:
+#   only:
+#     - master  # ветка git
+#     - main
+
+# cache: node_modules  # кеширование
+
+# install:
+#   - yarn  # команда установки зависимостей
+
+# build: off  # отключаем встроенную в appveyor систему сборки
+
+# build_script:
+#   - yarn build   # команда сборки
+
+# test_script:
+#   - yarn lint && yarn test  # скрипт тестирования
+
+# deploy_script:  # скрипт развёртывания
+#   - git config --global credential.helper store
+#   - git config --global user.name AppVeyor
+#   - git config --global user.email ci@appveyor.com
+#   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+#   - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>"
+
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: v+rixxnOEEOr3Q1jzX1djkwvuqepqTaRiZlRIOqEdooA6YviSvXGEwq34iaoSa2j
+  artifact: dist
+  branch: gh-pages
+  on:
+    branch: main
+
+image: Ubuntu2204
+
+stack: node 22
 
 branches:
   only:
-    - master  # ветка git
+    - master
     - main
 
-cache: node_modules  # кеширование
+cache: node_modules
 
 install:
-  - yarn  # команда установки зависимостей
+  - yarn
 
-build: off  # отключаем встроенную в appveyor систему сборки
+build: off
 
 build_script:
-  - yarn build   # команда сборки
+  - yarn build
 
 test_script:
-  - yarn lint && yarn test  # скрипт тестирования
-
-deploy_script:  # скрипт развёртывания
-  - git config --global credential.helper store
-  - git config --global user.name AppVeyor
-  - git config --global user.email ci@appveyor.com
-  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
-  - npx gh-pages -d dist -u "appveyor-bot <ci@appveyor>"
+  - yarn lint && yarn test

@@ -18,10 +18,10 @@
 #   - git config --global user.email "appveyor@example.com"
 #   - git remote set-url origin https://%GITHUB_TOKEN%@github.com/PrekinII/Trello-js.git
 #   - yarn deploy
-# deploy:
-#   provider: GitHub
-#   auth_token:
-#     secure: v+rixxnOEEOr3Q1jzX1djkwvuqepqTaRiZlRIOqEdooA6YviSvXGEwq34iaoSa2j
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: v+rixxnOEEOr3Q1jzX1djkwvuqepqTaRiZlRIOqEdooA6YviSvXGEwq34iaoSa2j
 
 #   tag: $(APPVEYOR_BUILD_VERSION)
 #   on:

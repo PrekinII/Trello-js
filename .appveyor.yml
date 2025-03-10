@@ -60,29 +60,23 @@
 
 # Настройки выше не работают!!!
 
-deploy:
-  provider: GitHub
-  auth_token:
-    secure: v+rixxnOEEOr3Q1jzX1djkwvuqepqTaRiZlRIOqEdooA6YviSvXGEwq34iaoSa2j
-  artifact: dist
-  branch: gh-pages
-  on:
-    branch: main
-  skip_commits:  # Добавляем эту секцию
-    files:
-      - '**'
-    message: /\[skip ci\]/
-
 image: Ubuntu2204
 
 stack: node 22
+
+environment:
+  GITHUB_TOKEN:
+    secure: v+rixxnOEEOr3Q1jzX1djkwvuqepqTaRiZlRIOqEdooA6YviSvXGEwq34iaoSa2j
 
 branches:
   only:
     - master
     - main
+  except:
+    - gh-pages
 
-cache: node_modules
+cache:
+  - node_modules
 
 install:
   - yarn
@@ -94,3 +88,12 @@ build_script:
 
 test_script:
   - yarn lint && yarn test
+
+deploy:
+  provider: GitHub
+  auth_token:
+    secure: v+rixxnOEEOr3Q1jzX1djkwvuqepqTaRiZlRIOqEdooA6YviSvXGEwq34iaoSa2j
+  artifact: dist
+  branch: gh-pages
+  on:
+    branch: main

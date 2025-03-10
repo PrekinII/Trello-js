@@ -1,4 +1,4 @@
 import "./styles/main.css";
-import Trello from "./Trello.js";
+import Trello from "./trello.js";
 
 const trello = new Trello(); // eslint-disable-line no-unused-vars

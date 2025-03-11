@@ -86,6 +86,10 @@ build: off
 build_script:
   - yarn build
 
+artifacts:
+  - path: dist
+    name: dist
+
 test_script:
   - yarn lint && yarn test
 

@@ -93,11 +93,11 @@ artifacts:
 test_script:
   - yarn lint && yarn test
 
-deploy:
-  provider: GitHub
-  auth_token:
-    secure: v+rixxnOEEOr3Q1jzX1djkwvuqepqTaRiZlRIOqEdooA6YviSvXGEwq34iaoSa2j
-  artifact: dist
-  branch: gh-pages
-  on:
-    branch: main
+# deploy:
+#   provider: GitHub
+#   auth_token:
+#     secure: v+rixxnOEEOr3Q1jzX1djkwvuqepqTaRiZlRIOqEdooA6YviSvXGEwq34iaoSa2j
+#   artifact: dist
+#   branch: gh-pages
+#   on:
+#     branch: main
